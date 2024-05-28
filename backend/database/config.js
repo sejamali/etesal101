@@ -5,12 +5,12 @@ const sequelize = new Sequelize({
 });
 
 
-require('./models/User');
-require('./models/Invoice');
-require('./models/Package');
-require('./models/AllowedConfigTemplates');
-require('./models/ConfigTemplate');
-require('./models/UserHistory');
+const User = require('./models/User')(sequelize);
+const Invoice = require('./models/Invoice')(sequelize);
+const Package = require('./models/Package')(sequelize);
+const AllowedConfigTemplates = require('./models/AllowedConfigTemplates')(sequelize);
+const ConfigTemplate = require('./models/ConfigTemplate')(sequelize);
+const UserHistory = require('./models/UserHistory')(sequelize);
 
 
 // Define relationships
