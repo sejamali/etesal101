@@ -35,3 +35,8 @@ admin/user/all
 /superadmin/config/- > update
 
 /superadmin/config/ -> delete
+
+
+
+db structure
+

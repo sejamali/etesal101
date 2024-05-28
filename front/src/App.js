@@ -18,7 +18,7 @@ function App()
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<h2>Welcome to Metadata Management</h2>} /> 
+          <Route path="/" element={<h2>Welcome to Metadata Management</h2>} />
           <Route path="/metadata/all" element={<MetadataList />} />
           <Route path="/metadata/new" element={<MetadataForm />} />
         </Routes>
