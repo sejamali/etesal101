@@ -26,6 +26,7 @@ Invoice.belongsTo(Package, { foreignKey: 'package_id' });
 Package.belongsTo(AllowedConfigTemplates, { foreignKey: 'allowedConfigTemplates_id' });
 
 AllowedConfigTemplates.belongsTo(ConfigTemplate, { foreignKey: 'configTemplate_id' });
+AllowedConfigTemplates.belongsTo(Package, { foreignKey: 'package_id' });
 
 // Sync models
 const syncDatabase = async () =>

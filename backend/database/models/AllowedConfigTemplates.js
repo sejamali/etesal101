@@ -6,7 +6,8 @@ module.exports = (sequelize) =>
     class AllowedConfigTemplates extends Model { }
     AllowedConfigTemplates.init({
         id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-        configTemplate_id: { type: DataTypes.INTEGER, allowNull: false }
+        configTemplate_id: { type: DataTypes.INTEGER, allowNull: false },
+        package_id: { type: DataTypes.INTEGER, allowNull: false }
     }, {
         sequelize,
         modelName: 'AllowedConfigTemplates',
