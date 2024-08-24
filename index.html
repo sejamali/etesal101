@@ -1,1 +1,44 @@
-felansss
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch and Display Content</title>
+</head>
+<body>
+    <h1>Content Fetcher</h1>
+    <div id="content">
+        <p>Loading content...</p>
+    </div>
+
+    <script>
+        // URL to fetch content from
+        const url = 'http://141.11.182.139:80/sub/mca6l8cmj69dt6c6';
+
+        // Function to fetch content and display it
+        async function fetchContent() {
+            try {
+                // Fetch the content from the URL
+                const response = await fetch(url);
+
+                // Check if the request was successful
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                // Get the response text
+                const data = await response.text();
+
+                // Display the fetched content in the HTML
+                document.getElementById('content').innerHTML = `<pre>${data}</pre>`;
+            } catch (error) {
+                // Handle errors (e.g., network issues)
+                document.getElementById('content').innerHTML = `<p>Error fetching content: ${error.message}</p>`;
+            }
+        }
+
+        // Call the function to fetch content when the page loads
+        fetchContent();
+    </script>
+</body>
+</html>
